@@ -4,6 +4,6 @@ int main(void)
 
 {
   printf("Hello Man~~\n");
-  printf("Hello I'm kwan dong~~")
+  printf("Hello I'm kwan dong~~why so serious?")
   return 0;
 }
