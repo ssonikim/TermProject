@@ -1,49 +1,35 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int main(void)
-
+int main()
 {
-  int inputMenu;
+  int InputMenu; //for switch values
   while(1)
   {
-	PrintMenu();
-	scanf("%d",&inputMenu);
-	system("cls");
-	switch(inputMenu){
-	case 1:{
-	    Add_item();
-	    break;
- 	case 2:{
-         
-            printTable();
-            break;
-         }
-         case 3:{
-         
-            Find();
-            break;
-         }
-         case 4:{
-         
-            Delete_item();
-            break;
-            
-         }
-
-         case 5:{
-         
-            printf("Shut down Program.");
-            return 0;
-         }
-         default:{
-         
-            printf("Wrong Input Menu.");
-            break;
-         }
-         
+    printf("Plese select Menu what you want.\n"); //select
+    printf("1.Start!\n");  //start
+    printf("2.END!\n");  //end
+    scanf("%d",&InputMenu); //input number of menu
+    system("clear"); //clear
+    switch(InputMenu)
+    {
+      case 1: //Start
+      {
+        printf("gogogo\n");
+        break;
       }
-}
-
+      case 2: //End
+      {
+        printf("byebyebye\n");
+        return 0;
+      }
+      default: //something wrong
+      {
+        printf("you have entered something wrong!\n try again please\n");
+        break;
+      }
+    }
+    system("clear");
+  }
   return 0;
 }
