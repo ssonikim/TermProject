@@ -3,19 +3,24 @@
 
 int main()
 {
-  int InputMenu; //for switch values
+  int InputMenu=0; //for switch values
   while(1)
   {
     printf("Plese select Menu what you want.\n"); //select
     printf("1.Start!\n");  //start
     printf("2.END!\n");  //end
     scanf("%d",&InputMenu); //input number of menu
-    system("clear"); //clear
+   // system("clear"); //clear
     switch(InputMenu)
     {
       case 1: //Start
       {
         printf("gogogo\n");
+	char s[256];
+	int p;
+	printf("write your product and price\n");
+	scanf("%s %d",s,&p);
+	printf("your product is %s, and price is %d\n",s,p);
         break;
       }
       case 2: //End
@@ -29,7 +34,7 @@ int main()
         break;
       }
     }
-    system("clear");
+    //system("clear");
   }
   return 0;
 }
