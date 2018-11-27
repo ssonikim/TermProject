@@ -1,26 +1,65 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
+
+void PrintMenu()
+{
+  printf("====Menu===\n");
+  printf("1.Write AcountBook\n");
+  printf("2.Show AccountBook\n"); 
+  printf("3.Find purchase history\n"); 
+  printf("4.Delete purchase history\n"); 
+  printf("5.Sorting\n"); 
+  printf("6.Modify\n");
+  printf("7.Close\n");
+  printf("Please Input Menu Number: ");
+}
 
 int main()
 {
-  int InputMenu; //for switch values
   while(1)
   {
-    printf("Plese select Menu what you want.\n"); //select
-    printf("1.Start!\n");  //start
-    printf("2.END!\n");  //end
+    PrintMenu();
+    int InputMenu; //for switch values
     scanf("%d",&InputMenu); //input number of menu
     system("clear"); //clear
     switch(InputMenu)
     {
-      case 1: //Start
+      case 1: //write
       {
-        printf("gogogo\n");
+        printf("write\n");
+        sleep(1);
         break;
       }
-      case 2: //End
+      case 2: //show
       {
-        printf("byebyebye\n");
+        printf("show\n");
+        break;
+      }
+
+      case 3: //find
+      {
+        printf("find\n");
+        break;
+      }
+      case 4: //delete
+      {
+        printf("delete\n");
+        break;
+      }
+      case 5: //sorting
+      {
+        printf("sorting\n");
+        break;
+      }
+      case 6: //modify
+      {
+        printf("modify\n");
+        break;
+      }
+      case 7: //close
+      {
+        printf("close\n");
         return 0;
       }
       default: //something wrong
