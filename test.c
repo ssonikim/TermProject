@@ -9,7 +9,7 @@ int capi_example_1()
   char *sql;
   char *zErr;
 
-  rc = sqlite3_open("test1.db",&db);
+  rc = sqlite3_open("test.db",&db);
   if(SQLITE_OK != rc){
 		fprintf(stderr,"rc=%d\n",rc);
 		fprintf(stderr,"sqlite3_open error : %s\n",sqlite3_errmsg(db));
