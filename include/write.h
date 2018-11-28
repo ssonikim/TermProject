@@ -1,7 +1,7 @@
-#ifndef _WRITE_H_
-#define _WRITE_H_
+#ifndef WRITE_H
+#define WRITE_H
 
-int write();
+extern int write();
 
 
 #endif

@@ -1,6 +1,6 @@
 #include <sqlite3.h>
 #include <stdio.h>
-#include <global.h>
+#include "global.h"
 int write()
 {
 //  sqlite3 *db;
