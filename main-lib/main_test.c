@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<sqlite3.h>
-#include"write.h"
-#include"global.h"
+#include <stdio.h>
+#include <sqlite3.h>
+#include "write.h"
+#include "global.h"
+#include "erase.h"
 
 sqlite3 *db;
 int rc;
@@ -12,7 +13,7 @@ int makemain_db()
 {
 
 
-  sql = "CREATE TABLE IF NOT EXISTS AccBook(name text, price int)";
+  sql = "CREATE TABLE IF NOT EXISTS AccBook(date text,name text, price int)";
   rc = sqlite3_exec(db, sql,NULL,NULL,&zErr);
 
   //exec error
@@ -40,6 +41,8 @@ int main()
   }
   makemain_db();
   write();
+
+  erase();
 
   rc = sqlite3_close(db);
   return 0;

@@ -1,4 +1,4 @@
-DIR = lib
+DIR = main-lib
 all:
 	for d in $(DIR); \
 	do \
