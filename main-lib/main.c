@@ -5,6 +5,8 @@
 #include "global.h"
 #include "write.h"
 #include "erase.h"
+#include "show.h"
+
 sqlite3 *db;
 int rc;
 const char *sql;
@@ -75,6 +77,7 @@ int main()
       case 2: //show
       {
         printf("show\n");
+	show();
         break;
       }
 
