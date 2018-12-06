@@ -5,6 +5,7 @@
 #include "global.h"
 #include "write.h"
 #include "erase.h"
+#include "show.h"
 
 sqlite3 *db;
 int rc;
@@ -70,12 +71,13 @@ int main()
       {
         printf("write\n");
 	write();
-        sleep(1);
+        //sleep(1);
         break;
       }
       case 2: //show
       {
         printf("show\n");
+	show();
         break;
       }
 

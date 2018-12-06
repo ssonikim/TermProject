@@ -5,7 +5,7 @@
 int erase()
 {
 
-  sql = "delete from AccBook where name = 'apple'";
+  sql = "delete from AccBook where date = '1.1'and name ='apple'";
   rc = sqlite3_exec(db,sql,NULL,NULL,&zErr);
 
    if (SQLITE_OK != rc){
