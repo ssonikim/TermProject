@@ -4,7 +4,7 @@
 
 void PrintMenu()
 {
-  printf("====Menu===\n");
+  printf("=====Menu====\n");
   printf("1.Write AcountBook\n");
   printf("2.Show AccountBook\n"); 
   printf("3.Find purchase history\n"); 
