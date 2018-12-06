@@ -17,12 +17,15 @@ void PrintMenu()
 
 int main()
 {
+
+  int InputMenu=0; //for switch values
+
   while(1)
   {
     PrintMenu();
     int InputMenu; //for switch values
     scanf("%d",&InputMenu); //input number of menu
-    system("clear"); //clear
+   // system("clear"); //clear
     switch(InputMenu)
     {
       case 1: //write
@@ -54,7 +57,16 @@ int main()
       }
       case 6: //modify
       {
+
+        printf("gogogo\n");
+	char s[256];
+	int p;
+	printf("write your product and price\n");
+	scanf("%s %d",s,&p);
+	printf("your product is %s, and price is %d\n",s,p);
+
         printf("modify\n");
+
         break;
       }
       case 7: //close
@@ -68,7 +80,7 @@ int main()
         break;
       }
     }
-    system("clear");
+    //system("clear");
   }
   return 0;
 }
