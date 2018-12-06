@@ -1,12 +1,20 @@
+
 #include <sqlite3.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "global.h"
 #include <string.h>
+#include <cstdlib>
+#include <iostream>
+
 char date[10];
 char name[20];
-int price=0;
-char query[]="insert into Accbook values";
-
+int iprice=0;
+char cprice[20];
+char query[]="insert into Accbook values(\'";
+char query_ddapoint[]="\',";
+char query_dda[]="\'";
+char query_last[]="\')";
 
 
 int write()
@@ -18,12 +26,24 @@ int write()
   scanf("%s",name);
 
   printf("put price:\n");
-  scanf("%d",&price);
-  strcpy(query)
-  sprintf(sql, "insert into Accbook values(%s,%s)", date, name);
-//  sqlite3_exec(pSQLite3, insertDataQuery, callback, 0, &szErrMsg);
+  scanf("%d",&iprice);
+  sprintf(cprice,"%d",iprice);
 
- // sql = "insert into AccBook values('%s','%s','%d'),;";
+ // strcat(query,date);
+ // printf("%s",query);
+ // strcat(query,query_ddapoint);
+//  strcat(query,query_dda);
+//  strcat(query,name);
+ // printf("%s",query);
+ // strcat(query,query_ddapoint);
+ // strcat(query,query_dda);
+//  strcat(query,cprice);
+//  printf("%s",query);
+//  strcat(query,query_last);
+//  printf("%s",query);
+//  sprintf(sql, "insert into Accbook values(%s,%s)", date, name);
+
+  sql = "insert into AccBook values('@date','ds',2342);";
   rc = sqlite3_exec(db,sql,NULL,NULL,&zErr);
 
    if (SQLITE_OK != rc){
