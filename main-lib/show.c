@@ -6,7 +6,7 @@
 
 char ex_value[6];
 int strcmp_flag=0;
-int i=0;
+int i=0; //0 ex-date != current date 1 is equal
 int cbSelect(void *data, int ncols, char** values, char** headers)
 {
   i=0;
@@ -30,6 +30,7 @@ int cbSelect(void *data, int ncols, char** values, char** headers)
 
 int show()
 {
+  strcmp_flag=0; // update - 12.8 for modify error 
   sql = "SELECT * from AccBook;";
   printf("\n\t\t\t\tA . C . C . B . O . O . K\n");
   const char* data= "=====================================================================================";

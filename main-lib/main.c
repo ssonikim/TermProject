@@ -6,6 +6,7 @@
 #include "write.h"
 #include "erase.h"
 #include "show.h"
+#include "find.h"
 
 sqlite3 *db;
 int rc;
@@ -84,6 +85,7 @@ int main()
       case 3: //find
       {
         printf("find\n");
+        find();
         break;
       }
       case 4: //delete
