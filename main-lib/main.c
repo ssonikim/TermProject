@@ -6,6 +6,7 @@
 #include "write.h"
 #include "erase.h"
 #include "show.h"
+#include "modify.h"
 
 sqlite3 *db;
 int rc;
@@ -16,10 +17,10 @@ void PrintMenu()
 {
   printf("=====Menu====\n");
   printf("1.Write AcountBook\n");
-  printf("2.Show AccountBook\n"); 
-  printf("3.Find purchase history\n"); 
-  printf("4.Delete purchase history\n"); 
-  printf("5.Sorting\n"); 
+  printf("2.Show AccountBook\n");
+  printf("3.Find purchase history\n");
+  printf("4.Delete purchase history\n");
+  printf("5.Sorting\n");
   printf("6.Modify\n");
   printf("7.Close\n");
   printf("Please Input Menu Number: ");
@@ -29,7 +30,7 @@ int makemain_db()
 {
 
 
-  sql = "CREATE TABLE IF NOT EXISTS AccBook(date text,name text, price int)";
+  sql = "CREATE TABLE IF NOT EXISTS AccBook(date text,name text, price text)";
   rc = sqlite3_exec(db, sql,NULL,NULL,&zErr);
 
   //exec error
@@ -100,8 +101,8 @@ int main()
       case 6: //modify
       {
 
-        printf("gogogo\n");
-	
+        printf("modify\n");
+	modify();
 
         break;
       }

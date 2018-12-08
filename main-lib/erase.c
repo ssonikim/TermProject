@@ -2,34 +2,34 @@
 #include <stdio.h>
 #include <string.h>
 #include "global.h"
-char date1[10];
-char name1[20];
+char date_d[10];
+char name_d[20];
 //int iprice=0;
-char query1[]="delete from AccBook where date = \'";
+char query_d[]="delete from AccBook where date = \'";
 char str1[100];
-char dda1[]="\'";
+char dda_d[]="\'";
 char mid[] = "and name = \'";
 
-void make_sql1()
+void make_sql_d()
 {
   //put date to char date
   printf("put date:\n");
-  scanf("%s",date1);
+  scanf("%s",date_d);
   //put date to char name
   printf("put name:\n");
-  scanf("%s",name1);
+  scanf("%s",name_d);
 
-  strcat(str1,query1);
-  strcat(str1,date1);
-  strcat(str1,dda1);
+  strcat(str1,query_d);
+  strcat(str1,date_d);
+  strcat(str1,dda_d);
   strcat(str1,mid);
-  strcat(str1,name1);
-  strcat(str1,dda1);
+  strcat(str1,name_d);
+  strcat(str1,dda_d);
   printf("%s\n",str1);
 }
 int erase()
 {
-  make_sql1();
+  make_sql_d();
 
   rc = sqlite3_exec(db,str1,NULL,NULL,&zErr);
 

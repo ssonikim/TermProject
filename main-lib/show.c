@@ -30,6 +30,7 @@ int cbSelect(void *data, int ncols, char** values, char** headers)
 
 int show()
 {
+  strcmp_flag = 0;
   sql = "SELECT * from AccBook;";
   printf("\n\t\t\t\tA . C . C . B . O . O . K\n");
   const char* data= "=====================================================================================";
