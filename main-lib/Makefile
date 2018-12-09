@@ -4,8 +4,8 @@ LIB = libfuncs.a
 TARGET = main
 HEADPATH = -I/home/gonadong/TermProject/include
 LIBPATH = -L/home/gonadong/TermProject/main-lib
-OBJ = write.o erase.o show.o find.o
-OBJ_C = write.c erase.c show.c find.c
+OBJ = write.o erase.o show.o find.o sorting.o
+OBJ_C = write.c erase.c show.c find.c sorting.c
 
 $(TARGET): main.o $(LIB)
 	$(CC) main.o $(HEADPATH) -L. -lfuncs $(SQLITE) -o $@

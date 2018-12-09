@@ -5,15 +5,18 @@
 #include "global.h"
 #include <string.h>
 
+//12.10 price %s -> %d
 char date[10];
 char name[20];
-int iprice=0;
-char price[20];
+int int_price=0;
+char price[20]; 
 char query[]="insert into Accbook values(\'";
 char str[100];
 char ddapoint[]="\',";
 char dda[]="\'";
-char last[]="\');";
+char last[]=");";
+int user_mywallet;
+
 
 void make_sql()
 {
@@ -25,15 +28,17 @@ void make_sql()
   scanf("%s",name);
   //put date to char price
   printf("put price:\n");
-  scanf("%s",price);
-
+  scanf("%s",price);  // 12.10
+  int_price= atoi(price);  //12.10
+  user_mywallet=user_mywallet-int_price;
+  
   strcat(str,query);
   strcat(str,date);
   strcat(str,ddapoint);
   strcat(str,dda);
   strcat(str,name);
   strcat(str,ddapoint);
-  strcat(str,dda);
+ // strcat(str,dda); 12.10
   strcat(str,price);
   strcat(str,last);
   //check str

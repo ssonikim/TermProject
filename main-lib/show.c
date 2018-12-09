@@ -2,11 +2,13 @@
 #include <sqlite3.h>
 #include <string.h>
 #include "global.h"
+
 //#include "show.h"
 
 char ex_value[6];
 int strcmp_flag=0;
 int i=0; //0 ex-date != current date 1 is equal
+
 int cbSelect(void *data, int ncols, char** values, char** headers)
 {
   i=0;
@@ -20,7 +22,7 @@ int cbSelect(void *data, int ncols, char** values, char** headers)
     printf("%s=%s\t\t\t", headers[i], values[i]);
     if (i==ncols-1)
     {
-      printf("\n"); //last line enter
+      printf("\n your money= %d\n", user_mywallet); //last line enter
     }
   }
   strcmp_flag=1;

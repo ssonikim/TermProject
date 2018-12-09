@@ -7,11 +7,14 @@
 #include "erase.h"
 #include "show.h"
 #include "find.h"
+#include "sorting.h"
 
 sqlite3 *db;
 int rc;
 const char *sql;
 char *zErr;
+int mywallet;
+char user_name[10];
 
 void PrintMenu()
 {
@@ -57,6 +60,12 @@ int main()
 		return -1;
   }
   makemain_db();
+  printf("Put in your data...\n ");  //get user data 12.10
+  printf("Put in your name:");
+  //scanf("&s",user_name);
+  printf("Put in your total money:");
+  scanf("%d",&user_mywallet);
+  printf("Hi %s, your total money is :%d\n", user_name, user_mywallet);
 
   int InputMenu=0; //for switch values
 
@@ -97,6 +106,7 @@ int main()
       case 5: //sorting
       {
         printf("sorting\n");
+        sorting();
         break;
       }
       case 6: //modify
