@@ -11,7 +11,7 @@ int sorting_mode=0;
 char sorting_DESC[]=" ORDER BY price DESC;";
 char sorting_ASC[]=" ORDER BY price ASC;";
 char str_sorting[100]="SELECT * FROM AccBook";
-
+char str_return[]="SELECT * FROM AccBook";
 
 int cbSelect_sorting(void *data, int ncols, char** values, char** headers)
 {
@@ -72,10 +72,11 @@ int sorting()
 		fprintf(stderr,"sqlite3_exec error : %s\n",sqlite3_errmsg(db));
 		return -1;
   }
-  for(int i=0; i<100; i++)
-  {
-    str_sorting[i]=0;
-  }
+//  for(int i=0; i<100; i++)
+//  {
+//    str_sorting[i]=0;
+//  }
+  strcpy(str_sorting,str_return);
   return 0;
 }
 

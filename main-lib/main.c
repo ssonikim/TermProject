@@ -13,8 +13,10 @@ sqlite3 *db;
 int rc;
 const char *sql;
 char *zErr;
-int mywallet;
 char user_name[10];
+int reset_flag=0;
+char lastwallet[20];
+
 
 void PrintMenu()
 {
@@ -33,7 +35,7 @@ int makemain_db()
 {
 
 
-  sql = "CREATE TABLE IF NOT EXISTS AccBook(date text,name text, price int)";
+  sql = "CREATE TABLE IF NOT EXISTS AccBook(Date text, Name text, Price int, Remaining money int)";
   rc = sqlite3_exec(db, sql,NULL,NULL,&zErr);
 
   //exec error
@@ -60,28 +62,37 @@ int main()
 		return -1;
   }
   makemain_db();
-  printf("Put in your data...\n ");  //get user data 12.10
-  printf("Put in your name:");
-  //scanf("&s",user_name);
-  printf("Put in your total money:");
-  scanf("%d",&user_mywallet);
-  printf("Hi %s, your total money is :%d\n", user_name, user_mywallet);
-
+  printf("Would you like to create a new AccountBook?\n 1.Yes 2.No\n"); //1. reset 2. continue 
+  scanf("%d",&reset_flag);
+  if(reset_flag==1)
+  {
+  //put all_clean function
+    printf("reset complete!\n");
+    printf("Put in your data...\n ");  //get user data 12.10
+    printf("Put in your total money:");
+    scanf("%d",&user_mywallet);
+    printf("Hi your total money is :%d\n",user_mywallet);
+  }
+  else if(reset_flag==2)
   int InputMenu=0; //for switch values
-
   while(1)
   {
     PrintMenu();
     int InputMenu; //for switch values
     scanf("%d",&InputMenu); //input number of menu
-   // system("clear"); //clear
+    system("clear"); //clear
     switch(InputMenu)
     {
       case 1: //write
       {
         printf("write\n");
-	write();
-        sleep(1);
+	if(reset_flag==2)
+        {
+          show();
+        }
+        write();
+
+        //sleep(1);
         break;
       }
       case 2: //show
