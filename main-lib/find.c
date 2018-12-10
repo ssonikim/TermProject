@@ -10,8 +10,8 @@ int strcmp_flag_find=0;
 int find_mode =0; // find by 0 date 1 name 
 char date_find[20];
 char name_find[20];
-char query_date[]=" where date= '";
-char query_name[]=" where name= '";
+char query_dt[]=" where date= '";
+char query_n[]=" where name= '";
 char str_find[100];
 char query_last[]="\';";
 
@@ -49,7 +49,7 @@ void select_mode()
    case(1):
    {
      scanf("%s",date_find);
-     strcat(str_find,query_date);
+     strcat(str_find,query_dt);
      strcat(str_find,date_find);
      strcat(str_find,query_last);
      break;
@@ -57,7 +57,7 @@ void select_mode()
    case(2):
    {
      scanf("%s",name_find);
-     strcat(str_find,query_name);
+     strcat(str_find,query_n);
      strcat(str_find,name_find);
      strcat(str_find,query_last);
      break;

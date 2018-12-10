@@ -67,7 +67,6 @@ char* Itoa(int Value, char* Buffer, int Radix)
 	
 }
 
-
 void make_sql()
 {
   //put date to char date
@@ -103,6 +102,7 @@ void make_sql()
   //check str
   printf("%s\n",str);
 }
+
 
 int write()
 {

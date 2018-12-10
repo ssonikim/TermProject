@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <sqlite3.h>
 #include "global.h"
 #include "write.h"
@@ -8,6 +8,8 @@
 #include "show.h"
 #include "find.h"
 #include "sorting.h"
+#include "modify.h"
+#include "allclean.h"
 
 sqlite3 *db;
 int rc;
@@ -22,12 +24,12 @@ void PrintMenu()
 {
   printf("=====Menu====\n");
   printf("1.Write AcountBook\n");
-  printf("2.Show AccountBook\n"); 
-  printf("3.Find purchase history\n"); 
-  printf("4.Delete purchase history\n"); 
-  printf("5.Sorting\n"); 
-  printf("6.Modify\n");
-  printf("7.Close\n");
+  printf("2.Show AccountBook\n");
+  printf("3.Find purchase history\n");
+  printf("4.Delete purchase history\n");
+  printf("5.Sorting Prices\n");
+  printf("6.Modify purchase history\n");
+  printf("7.Close Program\n");
   printf("Please Input Menu Number: ");
 }
 
@@ -67,6 +69,7 @@ int main()
   if(reset_flag==1)
   {
   //put all_clean function
+    allclean();
     printf("reset complete!\n");
     printf("Put in your data...\n ");  //get user data 12.10
     printf("Put in your total money:");
@@ -86,13 +89,13 @@ int main()
       case 1: //write
       {
         printf("write\n");
+
 	if(reset_flag==2)
         {
           show();
         }
         write();
 
-        //sleep(1);
         break;
       }
       case 2: //show
@@ -111,20 +114,23 @@ int main()
       case 4: //delete
       {
         printf("delete\n");
+	show();
 	erase();
         break;
       }
       case 5: //sorting
       {
         printf("sorting\n");
+	show();
         sorting();
         break;
       }
       case 6: //modify
       {
 
-        printf("gogogo\n");
-	
+        printf("modify\n");
+	show();
+	modify();
 
         break;
       }
