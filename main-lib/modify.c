@@ -11,7 +11,8 @@ char price_m[10];
 char query_date[]="update AccBook set date=\'";
 char query_name[]="update AccBook set name=\'";
 char query_price[]="update AccBook set price= ";
-int price_modify=0;
+char query_remain[]="update AccBook set Remaining money=";
+
 char str2[100];
 char dda_m[]="\'";
 char name_mid[] = "and price = ";
@@ -32,7 +33,6 @@ void make_sql_date()
   scanf("%s",name_m);
   printf("Write down its price\n");
   scanf("%s",price_m);
-  price_modify = atoi(price_m);
   strcat(str2,query_date);
   strcat(str2,date_m);
   strcat(str2,dda_m);
@@ -55,7 +55,6 @@ void make_sql_name()
   //put date to char name
   printf("Write down its price\n");
   scanf("%s",price_m);
-  price_modify = atoi(price_m);
   strcat(str2,query_name);
   strcat(str2,name_m);
   strcat(str2,dda_m);
@@ -73,18 +72,15 @@ void make_sql_price()
 
   printf("Write the price to be modified\n");
   scanf("%s",price_m);
+//  price_modify = atoi(price_m);
   //put date to char date
   printf("Write down its date:\n");
   scanf("%s",date_m);
   //put date to char name
   printf("Write down its name:\n");
   scanf("%s",name_m);
-  price_modify = atoi(price_m);
-
-
   strcat(str2,query_price);
   strcat(str2,price_m);
-  //strcat(str2,dda_m);
   strcat(str2,where_name);
   strcat(str2,name_m);
   strcat(str2,dda_m);
@@ -94,9 +90,9 @@ void make_sql_price()
 
   printf("%s\n",str2);
 }
+
 int modify()
 {
-  //make_sql1();
   int select=0;
   printf("Which Values do you want Modify? : 1.date , 2.name, 3.price\n");
   scanf("%d",&select);
@@ -131,9 +127,6 @@ int modify()
   {
     str2[i]=0;
   }
-
-
-
 
 return 0;
 }

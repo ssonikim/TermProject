@@ -7,10 +7,7 @@ OBJ = write.o erase.o show.o modify.o allclean.o find.o sorting.o
 OBJ_C = write.c erase.c show.c modify.c allclean.c find.c sorting.c
 
 $(TARGET): main.o $(LIB)
-	$(CC) main.o $(HEADPATH1) -L. -lfuncs $(SQLITE) -o $@
-
-main.o: main.c
-	$(CC) -c $< -o $@ $(HEADPATH) $(SQLITE)
+	$(CC) main.o $(HEADPATH) -L. -lfuncs $(SQLITE) -o $@
 
 $(LIB): $(OBJ)
 	ar rv $@ $(OBJ)

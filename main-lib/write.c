@@ -4,13 +4,12 @@
 #include <stdlib.h>
 #include "global.h"
 #include <string.h>
-#include "show.h"
 
 //12.10 price %s -> %d
 char date[10];
 char name[20];
 int int_price=0;
-char price[20]; 
+char price[20];
 char query[]="insert into Accbook values(\'";
 char str[100];
 char ddapoint[]="\',";
@@ -64,7 +63,7 @@ char* Itoa(int Value, char* Buffer, int Radix)
 	}
 	Buffer[Index] = 0;
 	return Strrev(Buffer);
-	
+
 }
 
 void make_sql()
@@ -79,22 +78,20 @@ void make_sql()
   printf("Please enter the price of the item:\n");
   scanf("%s",price);  // 12.10
   int_price= atoi(price);  //12.10
-  
+
   if(reset_flag==2)
   {
     user_mywallet=atoi(lastwallet);
   }
- // user_mywallet=
   user_mywallet=user_mywallet-int_price;
   Itoa(user_mywallet,c_wallet,10);
-  
+
   strcat(str,query);
   strcat(str,date);
   strcat(str,ddapoint);
   strcat(str,dda);
   strcat(str,name);
   strcat(str,ddapoint);
- // strcat(str,dda); 12.10
   strcat(str,price);
   strcat(str,point);
   strcat(str,c_wallet);
@@ -108,7 +105,7 @@ int write()
 {
   make_sql();
   rc = sqlite3_exec(db,str,NULL,NULL,&zErr);
- 
+
    if (SQLITE_OK != rc){
 		fprintf(stderr,"rc=%d\n",rc);
 		fprintf(stderr,"sqlite3_write value error : %s\n",sqlite3_errmsg(db));
