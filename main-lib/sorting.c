@@ -36,9 +36,10 @@ int cbSelect_sorting(void *data, int ncols, char** values, char** headers)
 void select_order()
 {
   sorting_mode=0;
-  printf("Please select sorting mode by 1.DESC or 2.ASC \n");
+  printf("Please select sorting mode by 1. Sort the prices in expensive or 2. Sort the prices in cheap \n");
   scanf("%d",&sorting_mode);//get sorting mode num 1 DESC 2 ASC
   printf("Please input what you want.\n");
+  system("clear");
   switch(sorting_mode)
   {
    case(1):

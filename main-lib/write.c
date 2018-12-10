@@ -70,13 +70,13 @@ char* Itoa(int Value, char* Buffer, int Radix)
 void make_sql()
 {
   //put date to char date
-  printf("put date:\n");
+  printf("Please Enter the date of purchase:\n");
   scanf("%s",date);
   //put date to char name
-  printf("put name:\n");
+  printf("Please Enter your purchased item Name:\n");
   scanf("%s",name);
   //put date to char price
-  printf("put price:\n");
+  printf("Please enter the price of the item:\n");
   scanf("%s",price);  // 12.10
   int_price= atoi(price);  //12.10
   
