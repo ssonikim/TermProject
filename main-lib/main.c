@@ -20,9 +20,9 @@ void PrintMenu()
   printf("2.Show AccountBook\n");
   printf("3.Find purchase history\n");
   printf("4.Delete purchase history\n");
-  printf("5.Sorting\n");
-  printf("6.Modify\n");
-  printf("7.Close\n");
+  printf("5.Sorting Prices\n");
+  printf("6.Modify purchase history\n");
+  printf("7.Close Program\n");
   printf("Please Input Menu Number: ");
 }
 
@@ -30,7 +30,7 @@ int makemain_db()
 {
 
 
-  sql = "CREATE TABLE IF NOT EXISTS AccBook(date text,name text, price text)";
+  sql = "CREATE TABLE IF NOT EXISTS AccBook(date text,name text, price int)";
   rc = sqlite3_exec(db, sql,NULL,NULL,&zErr);
 
   //exec error

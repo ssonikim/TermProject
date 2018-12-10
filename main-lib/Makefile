@@ -2,13 +2,12 @@ SQLITE = -lsqlite3
 CC = g++ -g
 LIB = libfuncs.a
 TARGET = main
-HEADPATH = -I/home/do/termproject/include
-LIBPATH = -L/home/do/termproject/lib
-OBJ = write.o erase.o show.o modify.o
-OBJ_C = write.c erase.c show.c modify.c
+HEADPATH = -I../include
+OBJ = write.o erase.o show.o modify.o allclean.o
+OBJ_C = write.c erase.c show.c modify.c allclean.c
 
 $(TARGET): main.o $(LIB)
-	$(CC) main.o $(HEADPATH) -L. -lfuncs $(SQLITE) -o $@
+	$(CC) main.o $(HEADPATH1) -L. -lfuncs $(SQLITE) -o $@
 
 main.o: main.c
 	$(CC) -c $< -o $@ $(HEADPATH) $(SQLITE)

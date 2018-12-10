@@ -1,6 +1,7 @@
 #include <sqlite3.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "global.h"
 
 char date_m[10];
@@ -9,14 +10,15 @@ char price_m[10];
 //int iprice=0;
 char query_date[]="update AccBook set date=\'";
 char query_name[]="update AccBook set name=\'";
-char query_price[]="update AccBook set price=\'";
+char query_price[]="update AccBook set price=";
+int price_modify=0;
 char str2[100];
 char dda_m[]="\'";
-char name_mid[] = "and price = \'";
+char name_mid[] = "and price = ";
 char where_name[] = "where name =\'";
 
 char where_date[] = "where date =\'";
-char date_mid[] = "and price =\'";
+char date_mid[] = "and price =";
 
 char price_mid[] = "and date =\'";
 
@@ -30,7 +32,7 @@ void make_sql_date()
   scanf("%s",name_m);
   printf("Write down its price\n");
   scanf("%s",price_m);
-
+  price_modify = atoi(price_m);
   strcat(str2,query_date);
   strcat(str2,date_m);
   strcat(str2,dda_m);
@@ -39,7 +41,6 @@ void make_sql_date()
   strcat(str2,dda_m);
   strcat(str2,name_mid);
   strcat(str2,price_m);
-  strcat(str2,dda_m);
   printf("%s\n",str2);
 }
 
@@ -54,7 +55,7 @@ void make_sql_name()
   //put date to char name
   printf("Write down its price\n");
   scanf("%s",price_m);
-
+  price_modify = atoi(price_m);
   strcat(str2,query_name);
   strcat(str2,name_m);
   strcat(str2,dda_m);
@@ -63,7 +64,6 @@ void make_sql_name()
   strcat(str2,dda_m);
   strcat(str2,date_mid);
   strcat(str2,price_m);
-  strcat(str2,dda_m);
 
   printf("%s\n",str2);
 }
@@ -79,17 +79,18 @@ void make_sql_price()
   //put date to char name
   printf("Write down its name:\n");
   scanf("%s",name_m);
+  price_modify = atoi(price_m);
 
 
   strcat(str2,query_price);
   strcat(str2,price_m);
-  strcat(str2,dda_m);
+  //strcat(str2,dda_m);
   strcat(str2,where_name);
-  strcat(str2,name_m); 
+  strcat(str2,name_m);
   strcat(str2,dda_m);
   strcat(str2,price_mid);
   strcat(str2,date_m);
-  strcat(str2,dda_m); 
+  strcat(str2,dda_m);
 
   printf("%s\n",str2);
 }

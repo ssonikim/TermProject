@@ -18,13 +18,13 @@ char last[]="\');";
 void make_sql()
 {
   //put date to char date
-  printf("put date:\n");
+  printf("Enter the date:\n");
   scanf("%s",date);
   //put date to char name
-  printf("put name:\n");
+  printf("Enter the name of the item:\n");
   scanf("%s",name);
   //put date to char price
-  printf("put price:\n");
+  printf("Enter the price of the item:\n");
   scanf("%s",price);
 
   strcat(str,query);
@@ -44,7 +44,7 @@ int write()
 {
   make_sql();
   rc = sqlite3_exec(db,str,NULL,NULL,&zErr);
- 
+
    if (SQLITE_OK != rc){
 		fprintf(stderr,"rc=%d\n",rc);
 		fprintf(stderr,"sqlite3_write value error : %s\n",sqlite3_errmsg(db));

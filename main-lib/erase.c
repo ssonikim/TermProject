@@ -13,10 +13,10 @@ char mid[] = "and name = \'";
 void make_sql_d()
 {
   //put date to char date
-  printf("put date:\n");
+  printf("Enter the date of the record to be deleted:\n");
   scanf("%s",date_d);
   //put date to char name
-  printf("put name:\n");
+  printf("Enter the name of the record to be deleted:\n");
   scanf("%s",name_d);
 
   strcat(str1,query_d);
